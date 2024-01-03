@@ -1,38 +1,353 @@
-.App {
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+  /* Add fonts from the app's server 
+    @font-face {                
+      font-family: 'FontName';
+      src: url('FontName.woff2') format('woff2');
+    } 
+    ...or hosted services like Google Fonts 
+    @import url(//fonts.googleapis.com/css?family=Font+Name);
+  */
+  
+  /* @import 'node_modules/modern-normalize/modern-normalize.css'; */
+        /* npm install modern-normalize
+          Resets elements for browser consistency.  
+          https://www.npmjs.com/package/modern-normalize
+        */         
+  
+  /* Component-specific stylesheets, if any. 
+    @import "component1.css";   
+  */
+
+/*   ----- Variables  -----  */
+:root {
+  --centerVariable: 750px;
+}
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+body {       /* Can alternatively define in html {} or :root {} background-image:;*/
+  background-color:rgb(0, 0, 0);
+  
+  color:white;
+  font-family: 'Times New Roman', Times, serif; /* Define with at least one font name and its related generic family name.*/
+
+  margin:auto;
+  padding: 0 200px;
+  min-width: 350px;
+  max-width: 75%;
+}
+
+/*  ----- Page layout blocks -----  */
+header {
+  display: flex;
+  justify-content: space-between;
+
+}
+main {
+  position: absolute;
+  top: 500px;
+}
+
+div {}
+aside {}
+footer {
+  position: absolute;
+  bottom: -1000px;
+  left: 550px;
+  z-index: 2;
+}
+footer p{
+  width: 200px;
+}
+
+/* ----- Anchors ----- Text links */
+a {}
+a:link {}
+link:hover {
+  color: purple;
+}
+a:active {}
+link:visited {
+  color: purple;
+}
+
+/*  -----  Typography  ----- */
+p {
+  width: 750px;
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
+  z-index: 2;
+  background-color: rgb(94, 89, 89);
+  position: absolute;
+  left: -275px;
+}
+br {}
+ol, ul, dl {}
+li {}
+dt {}
+dd {}
+
+h1, h2, h3, h4, h5, h6 {} 
+h1 {
+}
+h2 {
+}
+h3 {
+  
+}
+h4 {
+  
+}
+h5 {}
+h6 {}
+
+abbr {}
+acronym {}
+address {}
+blockquote {}
+  q {}
+  cite {}
+em {}
+hr {}
+mark {}
+s {}
+span {}
+strong {}
+sub {}
+sup {}
+time {}
+
+label {
+  padding: 0px;
+  margin: 5px;
+}
+/*  ----- Coding or instructional typography ----- */
+pre {}
+code {}
+kbd {}
+samp {}
+var {}
+del {} 
+ins {}
+
+section h2{
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  width: 150px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  display: grid;
+  position: absolute;
+  top: 20px;
+  left: 384.835px;
+  font-size: 40px;
+  z-index: 2;
+}
+.App-article{
+  background-color: rgb(144, 133, 133);
+  position: fixed;
+  font-size: 20px;
+  top:0px;
+  right: 0px;
+  z-index: 3;
+  width: 1903px;
+  height: 50px;
+
+}
+
+.App-article a{
+  margin: 10px;
   color: white;
+  position: relative;
+  right: -735.135px;
+  top: 15px;
+
+}
+.App-article a:hover{
+  color: rgb(175, 14, 239);
 }
 
-.App-link {
-  color: #61dafb;
+.App-article a:visited{
+  color: rgb(0, 0, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.about-me{
+  height: 100vh;
+  position: absolute;
+  top: 150px;
+  left: 626.5px;
+  z-index: 2;
 }
+.about-me h2{
+  display: grid;
+  width: 150px;
+}
+
+
+.projects{
+  position: absolute;
+  top: 600px;
+  left: 626.5px;
+  z-index: 2;
+}
+
+.social-media{
+  position: absolute;
+  top: 1000px;
+  left: 626.5px;
+  z-index: 2;
+}
+.social-media h2{
+  width: 150px;
+}
+
+.social-media a{
+  color: rgb(0, 255, 162);
+  font-size: 20px;
+  position: absolute;
+  left: 36.655px;
+}
+.social-media a:hover{
+  color: rgb(175, 14, 239);
+  font-size: 20px;
+  position: absolute;
+  left: 36.655px;
+}
+.contact-info{
+  position: absolute;
+  top: 1100px;
+  left: 626.5px;
+  z-index: 2;
+}
+
+.contact-info table{
+  position: relative;
+  left: -111.5px;
+}
+/*  ----- Table ----- */
+table, tr, th, thead, td{
+  border-collapse: collapse;
+  text-align: left;
+  background-color: white;
+  color: black;
+  border: 7px solid black; /* Add this line to specify the border color */
+  width: 400px;
+}
+
+tr:hover {
+  background-color: var(--oregonOrange);
+  /* font-size: 30px; */
+
+}
+
+td:hover {
+  /* padding-top: 30px;
+  padding-bottom: 30px; */
+}
+
+  tr:nth-child(even) {}
+  td:nth-child(1) {}
+colgroup {}
+data {}
+datalist {}
+
+
+/*  ----- Form ----- */
+form {}
+fieldset {
+}
+  legend {}
+label {}
+  button {}
+  input {margin-left: 5px;}
+  output {}
+  meter {}
+  progress {}
+  select {}
+    optgroup {}
+    option {}
+  textarea {}
+
+/* ----- Media ----- */
+figure {}
+  figcaption {}
+  figure img {}
+svg {}
+picture {}
+  source {}
+iframe {}
+video {}
+audio {}
+embed {}
+object {}
+
+#personal-photo{
+  position: absolute;
+  top: 200px;
+  left: 751.5px;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  border: red;
+  z-index: 2;
+}
+#background-photo {
+  position: fixed;
+  top: 0px;
+  right: 276.5px;
+  height: 930px;
+  width: 1350px;
+  display: flex;
+  border: red;
+  opacity:0.65;
+  z-index: 1;
+}
+.Resume{
+  position: absolute;
+  top: 150px;
+  right: 650px;
+  align-content: center;
+  height: 734px;
+  width: 563px;
+  display: flex;
+  border: red;
+  opacity:1;
+  border-color: black;
+}
+
+/*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+.gallery {}
+
+.floatright {}
+.floatleft {}
+.center-middle {}
+
+.ten {}
+.twenty {}
+.thirty {}
+.forty {}
+.fifty {}
+.sixty {}
+.seventy {}
+.eighty {}
+
+.radius {}
+.circle {}
+.boxshadow {}
+.tshadow {} 
+.gradient {}
+.shape {}
+
+@keyframes App-logo {}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (min-width: 600px) {}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 1080px) {}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {}
