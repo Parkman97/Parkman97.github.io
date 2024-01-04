@@ -24,14 +24,11 @@
 
 /*   ----- Variables  -----  */
 :root {
-  --centerVariable: 750px;
 }
 
 /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
 body {       /* Can alternatively define in html {} or :root {} background-image:;*/
-  background-color:rgb(0, 0, 0);
-  
-  color:white;
+  background-color:beige;
   font-family: 'Times New Roman', Times, serif; /* Define with at least one font name and its related generic family name.*/
 
   margin:auto;
@@ -80,7 +77,6 @@ p {
   font-size: 20px;
   font-family:'Times New Roman', Times, serif;
   z-index: 2;
-  background-color: rgb(94, 89, 89);
   position: absolute;
   left: -275px;
 }
@@ -139,59 +135,102 @@ section h2{
 }
 
 .App-header {
-  display: grid;
-  position: absolute;
-  top: 20px;
-  left: 384.835px;
-  font-size: 40px;
-  z-index: 2;
+  position: fixed;
+  top: -25px;
+  left: 375px;
+  font-size: 20px;
+  z-index: 4;
 }
 .App-article{
-  background-color: rgb(144, 133, 133);
+  background-color: orange;
   position: fixed;
   font-size: 20px;
   top:0px;
   right: 0px;
   z-index: 3;
-  width: 1903px;
+  width: 2500px;
   height: 50px;
 
 }
 
 .App-article a{
+  cursor: pointer;
   margin: 10px;
-  color: white;
+  color: black;
   position: relative;
-  right: -735.135px;
+  right: -1700px;
   top: 15px;
-
 }
+
 .App-article a:hover{
+  cursor: pointer;
   color: rgb(175, 14, 239);
 }
 
 .App-article a:visited{
+  cursor: pointer;
   color: rgb(0, 0, 0);
 }
 
 .about-me{
   height: 100vh;
   position: absolute;
-  top: 150px;
-  left: 626.5px;
+  top: 250px;
+  left: 400px;
   z-index: 2;
 }
 .about-me h2{
   display: grid;
   width: 150px;
+  background-color: beige;
+}
+.about-me .about-me-text{
+  width: 700px;
+  background-color: beige;
 }
 
 
 .projects{
   position: absolute;
-  top: 600px;
+  top: 700px;
   left: 626.5px;
   z-index: 2;
+}
+
+.projects .poke-display{
+  position: relative;
+  font-size: 20px;
+  top:  50px;
+  left: -500px;
+}
+
+.projects .poke-display p{
+  width: 400px;
+  position: absolute;
+  left: -175px;
+}
+
+.projects .project2{
+  position: relative;
+  font-size: 20px;
+  top:  30px;
+  left: 40px;
+}
+.projects .project2 p{
+  position: absolute;
+  left: -175px;
+}
+
+.projects .project3{
+  position: relative;
+  font-size: 20px;
+  top:  10px;
+  left: 500px;
+}
+
+.projects .project3 p{
+  position: absolute;
+  left: -175px;
 }
 
 .social-media{
@@ -286,8 +325,8 @@ object {}
 
 #personal-photo{
   position: absolute;
-  top: 200px;
-  left: 751.5px;
+  top: 100px;
+  left: 385px;
   height: 400px;
   width: 400px;
   display: flex;
@@ -295,20 +334,20 @@ object {}
   z-index: 2;
 }
 #background-photo {
-  position: fixed;
-  top: 0px;
-  right: 276.5px;
-  height: 930px;
-  width: 1350px;
+  position: absolute;
+  top: 700px;
+  right: 410px;
+  height: 400px;
+  width: 400px;
   display: flex;
   border: red;
-  opacity:0.65;
+  opacity:1;
   z-index: 1;
 }
 .Resume{
   position: absolute;
   top: 150px;
-  right: 650px;
+  right: 900px;
   align-content: center;
   height: 734px;
   width: 563px;
