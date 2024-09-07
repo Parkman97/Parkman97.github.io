@@ -103,18 +103,37 @@
     font-size: 75px;
     position: absolute;
     z-index: 5;
-    color: white;
   }
-.nav  {
+  .nav {
     position: fixed;
-    z-index: 5;
-    color: white;
+    top: 0;
+    left: 0;
+    width: 100%; /* Span the entire width of the viewport */
+    background-color: #002f6c; /* Background color */
+    z-index: 10; /* Ensure it is above other elements */
+    padding: 1rem; /* Add padding for spacing */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Center the container horizontally */
   }
-.nav a {
-  position: relative;
-  z-index: 5;
-  color: rgb(226, 13, 13);
-}
+  
+  .nav-container {
+    display: flex; /* Use Flexbox for the links */
+    justify-content: space-between; /* Space the links evenly */
+    width: 60%; /* Span the middle third of the nav bar */
+  }
+  
+  .nav a {
+    color: #F0E68C; /* Link color */
+    text-decoration: none; /* Remove underline */
+    padding: 0.5rem 1rem; /* Add padding to links */
+  }
+  
+  /* Optional: Add styles for hover state */
+  .nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #FFFFE0;
+  }
   :root {
     --page-1-color: steelblue;
     --page-2-color: tan;
@@ -134,17 +153,17 @@
   
   /* PAGE COLORS */
   #page-1 {
-    background: var(--page-1-color);  
+    background: var(--page-1-color); 
   }
   
   #page-2 {
-    background: var(--page-2-color)
+    background: var(--page-2-color);
   }
   #page-3 {
-    background: var(--page-3-color)
+    background: var(--page-3-color);
   }
   #page-4 {
-    background: var(--page-4-color)
+    background: var(--page-4-color);
   }
   
   .page {
@@ -173,7 +192,6 @@
   .btn {
     display: inline-block;
     padding: 1rem 2rem;
-    background: #f4f4f4;
     color: #333;
     text-decoration: none;
     border: none;
@@ -218,4 +236,14 @@
 
   html {
     scroll-behavior: smooth;
+  }
+
+  .Professional_Photo {
+    position: relative;
+    
+  }
+
+  #page-1, #page-2, #page-3, #page-4 {
+    position: relative; /* Establish a stacking context */
+    z-index: 5; /* Higher than background layers */
   }

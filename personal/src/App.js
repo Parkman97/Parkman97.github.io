@@ -41,7 +41,7 @@ function App() {
       </nav>
 
       <header className="App-header">
-        <p>Sam Parkman's Personal Webpage</p>
+        <p></p>
         <div className="background-container">
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png" alt="Moon"/> 
           <div className="stars"></div>
@@ -53,7 +53,8 @@ function App() {
       {/* PAGE ONE */}
       <section id="page-1" className="page">
         <h1>About Me</h1>
-        <p>Section about me</p>  
+        <img src="/profile.jpg" alt="Samuel Parkman" className="Professional_Photo"/> 
+        <p>In the professional realm, I serve as a Software Engineer at GM, contributing my expertise to cutting-edge projects. Outside the traditional 9-to-5, I am dedicated to advancing my knowledge and skills in Computer Science, actively pursuing a B.S. degree from Oregon State University.</p>  
       </section>
 
       {/* PAGE TWO */}
