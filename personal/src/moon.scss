@@ -91,16 +91,23 @@
     animation:move-background 150s linear infinite;
   }
   img{
-    height: 50vh;
-    width:50vh;
+    height: 375px;
+    width:375px;
     position: absolute;
     z-index: 3;
     right: 20px;
   }
+
+  .Professional_Photo {
+    position: relative;
+    left: 300px;
+    top: 50px;
+    
+  }
   
   // Page Info
   p {
-    font-size: 75px;
+    font-size: 25px;
     position: absolute;
     z-index: 5;
   }
@@ -135,17 +142,12 @@
     color: #FFFFE0;
   }
   :root {
-    --page-1-color: steelblue;
-    --page-2-color: tan;
-    --page-3-color: teal;
-    --page-4-color: slateblue;
     --animation-speed: 1.2s;
   }
   
   body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
-    color: #fff;
     margin: 0;
     padding: 0;
     overflow-y: auto;
@@ -238,12 +240,92 @@
     scroll-behavior: smooth;
   }
 
-  .Professional_Photo {
-    position: relative;
-    
-  }
-
   #page-1, #page-2, #page-3, #page-4 {
     position: relative; /* Establish a stacking context */
     z-index: 5; /* Higher than background layers */
   }
+
+///////////////////// Sections CSS///////////////////
+  .section-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 200px 0;
+    padding: 20px;
+    width: 60vw;
+    height: 600px; /* Example height */
+    background-color: #d3d3d3;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px 5px #fffff0; /* Soft gold glow around edges */
+  }
+  
+  /* Left-aligned sections */
+  .section.left {
+    justify-content: flex-start; /* Align to left */
+
+  }
+  
+  /* Right-aligned sections */
+  .section.right {
+    justify-content: left; /* Align to right */
+    margin-left: auto; /* Push content to the right */
+  }
+  
+  .section h1 {
+    color: black;
+    text-align: left;
+  }
+
+  .section p {
+    color: black;
+  }
+
+  #page-1 p {
+    position: relative;
+    max-width: 600px;
+    bottom: 355px;
+    left: -200px;
+  }
+
+  #page-2 p {
+    position: relative;
+  }
+
+  #page-3 p {
+    position: relative;
+    max-width: 600px;
+    bottom: 355px;
+    left: -200px;
+  }
+
+  #page-4 p {
+    position: relative;
+    max-width: 600px;
+    bottom: 355px;
+    left: -200px;
+  }
+
+  ////////////////////////////////TABLE CSS//////////////////////
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
