@@ -3,23 +3,32 @@ import { useEffect } from 'react';  // Import useEffect
 
 function App() {
   useEffect(() => {
-    // jQuery script for smooth scrolling
-    const script = document.createElement('script');
-    script.src = "https://code.jquery.com/jquery-3.6.0.min.js";
-    script.onload = () => {
-      window.$('.btn').on('click', function(event) {
-        if (this.hash !== '') {
-          event.preventDefault();
-          const hash = this.hash;
-          
-          window.$('html, body').animate({
-            scrollTop: window.$(hash).offset().top
-          }, 1);
-        }
-      });
+    const handleClick = (event) => {
+      event.preventDefault();
+  
+      const targetId = event.currentTarget.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+  
+      if (targetElement) {
+        const headerOffset = 50;
+        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerOffset;
+  
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
     };
-    document.body.appendChild(script);
+  
+    const links = document.querySelectorAll(".btn");
+    links.forEach((link) => link.addEventListener("click", handleClick));
+  
+    return () => {
+      links.forEach((link) => link.removeEventListener("click", handleClick));
+    };
   }, []);
+  
 
   return (
     <div className="App">
