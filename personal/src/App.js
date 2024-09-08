@@ -1,7 +1,28 @@
 import './moon.scss';  // Updated to import SCSS
 import { useEffect } from 'react';  // Import useEffect
+import React, { useRef } from 'react';
+
+// Import Swiper and required modules
+import { Swiper, SwiperSlide } from 'swiper/react';  // Swiper components
+import 'swiper/css';  // Correct CSS import for Swiper
+import 'swiper/css/navigation';  // CSS for navigation arrows
 
 function App() {
+  const swiperRef = useRef(null);  // Create a ref to store Swiper instance
+
+  // Handler functions for custom navigation
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();  // Move to the next slide
+    }
+  };
+
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();  // Move to the previous slide
+    } 
+  };
+
   useEffect(() => {
     const handleClick = (event) => {
       event.preventDefault();
@@ -51,8 +72,8 @@ function App() {
       </header>
       
       {/* PAGE ONE */}
-      <section id="page-1" className="page" class="section-container">
-        <div class="section left">
+      <section id="page-1" className="section-container">
+        <div className="section left">
           <h1>About Me</h1>
           <img src="/profile.jpg" alt="Samuel Parkman" className="Professional_Photo"/> 
           <p>In the professional realm, I serve as a Software Engineer at GM, contributing my expertise to cutting-edge projects. Outside the traditional 9-to-5, I am dedicated to advancing my knowledge and skills in Computer Science, actively pursuing a B.S. degree from Oregon State University.</p>  
@@ -60,51 +81,55 @@ function App() {
       </section>
 
       {/* PAGE TWO */}
-      <section id="page-2" className="page" class="section-container">
-        <div class="section right">
+      <section id="page-2" className="section-container">
+        <div className="section right">
           <h1>Projects</h1>
-            <h2>Sample Table</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Project</th>
-                        <th>Dscription</th>
-                        <th>Showcases</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="https://github.com/Parkman97/Poke-Display">PokeDisplay</a></td>
-                        <td>Command Line Program that helps you get familiar with the original 151 pokemon. It uses API's to query pokemon images, stats and much more.</td>
-                        <td>Python, Command Line</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://github.com/osu-cs374/bigshell-Parkman97">Bigshell</a></td>
-                        <td>Row 2, Cell 2</td>
-                        <td>C</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://github.com/Parkman97/Network-Monitoring">Hive Network Monitor</a></td>
-                        <td>Utilizes a decentralized Hive Node model that does network checks using https, tcp, DNS, and others.</td>
-                        <td>Python, Networking Principals </td>
-                    </tr>
-                </tbody>
-            </table> 
+                 {/* Swiper Carousel */}
+                    <Swiper
+                    onSwiper={(swiper) => {
+                      swiperRef.current = swiper;
+                    }}
+                      spaceBetween={50}
+                      slidesPerView={1}
+                      navigation={{
+                        nextEl: '.custom-next-button',
+                        prevEl: '.custom-prev-button'
+                      }}
+                      autoplay={{ delay: 3000 }}
+                      loop
+                    >
+                    <SwiperSlide>
+                      <h3>PokeDisplay</h3>
+                      <p>Command Line Program to get familiar with the original 151 pokemon</p>
+                      <a href="https://github.com/Parkman97/Poke-Display" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h3>Bigshell</h3>
+                      <p>A shell written in C for system management.</p>
+                      <a href="https://github.com/osu-cs374/bigshell-Parkman97" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <h3>Hive Network Monitor</h3>
+                      <p>Decentralized network monitoring system.</p>
+                      <a href="https://github.com/Parkman97/Network-Monitoring" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+                    </SwiperSlide>
+                  </Swiper>
+                  <button className="custom-prev-button" onClick={handlePrev}></button>
+                  <button className="custom-next-button" onClick={handleNext}></button>
                 </div>
               </section>
 
       {/* PAGE THREE */}
-      <section id="page-3" className="page" class="section-container">
-        <div class="section left">
+      <section id="page-3" className="section-container">
+        <div className="section left">
           <h1>Contact Page</h1>
           <p>Contact info goes here</p>
         </div>  
       </section>
 
       {/* PAGE FOUR */}
-      <section id="page-4" className="page" class="section-container">
-        <div class="section right">
+      <section id="page-4" className="section-container">
+        <div className="section right">
           <h1>Bye</h1>
           <p>See ya later</p>
           </div>  

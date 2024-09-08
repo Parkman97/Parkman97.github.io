@@ -168,29 +168,6 @@
     background: var(--page-4-color);
   }
   
-  .page {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 4rem;
-  }
-  
-  .page h1 {
-    font-size: 4rem;
-    line-height: 1.2;
-    margin: 1rem;
-    z-index: 5;
-  }
-  
-  .page p {
-    font-size: 1.3rem;
-    z-index: 5;
-    position: relative;
-  }
-  
   .btn {
     display: inline-block;
     padding: 1rem 2rem;
@@ -250,6 +227,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    position: relative;
   }
 
   .section {
@@ -264,7 +242,7 @@
     background-color: #d3d3d3;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    box-shadow: 0 0 15px 5px #fffff0; /* Soft gold glow around edges */
+    box-shadow: 0 0 30px 5px #fffff0; /* Soft gold glow around edges */
   }
   
   /* Left-aligned sections */
@@ -295,8 +273,13 @@
     left: -200px;
   }
 
+  #page-2 h3,
+  #page-2 a,
   #page-2 p {
-    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    
   }
 
   #page-3 p {
@@ -313,19 +296,64 @@
     left: -200px;
   }
 
-  ////////////////////////////////TABLE CSS//////////////////////
-  table {
-    width: 100%;
-    border-collapse: collapse;
-}
-th, td {
+  /////////////////////////Swiper css//////////////////
+  .custom-prev-button,
+  .custom-next-button {
+      position: absolute;
+      top: 50%;
+      width: 50px; /* Adjust the width to match your design */
+      height: 50px; /* Adjust the height to match your design */
+      background-color: rgba(255, 255, 255, 0.5); /* Background color */
+      border: none;
+      border-radius: 50%; /* Make it circular */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      outline: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+      transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+  }
+  
+  /* Arrow styling */
+  .custom-prev-button::before,
+  .custom-next-button::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      position: absolute;
+  }
+  
+  /* Previous button (left arrow) */
+  .custom-prev-button {
+      left: 725px; /* Adjust the position from the left */
+      transform: translateY(-50%); /* Center vertically */
+  }
+  
+  .custom-prev-button::before {
+      border-width: 15px 20px 15px 0; /* Adjust sizes as needed */
+      border-color: transparent #333 transparent transparent; /* Arrow color */
+      left: 15px; /* Center the arrow inside the button */
+  }
+  
+  /* Next button (right arrow) */
+  .custom-next-button {
+      right: 10px; /* Adjust the position from the right */
+      transform: translateY(-50%); /* Center vertically */
+  }
+  
+  .custom-next-button::before {
+      border-width: 15px 0 15px 20px; /* Adjust sizes as needed */
+      border-color: transparent transparent transparent #333; /* Arrow color */
+      right: 15px; /* Center the arrow inside the button */
+  }
+  .swiper {
+    height: 400px; /* Adjust height as needed */
+    width: 1000px;
+    overflow: auto;
+    border-radius: 10px;
     border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-th {
-    background-color: #f2f2f2;
-}
-tr:nth-child(even) {
-    background-color: #f9f9f9;
 }
