@@ -123,15 +123,17 @@ function App() {
       <section id="page-3" className="section-container">
         <div className="section left">
           <h1>Contact Page</h1>
-          <p>Contact info goes here</p>
+          <p>Email: Swparkman02@gmail.com</p>
+          <p>Phone: 509-713-4895</p>
         </div>  
       </section>
 
       {/* PAGE FOUR */}
       <section id="page-4" className="section-container">
         <div className="section right">
-          <h1>Bye</h1>
-          <p>See ya later</p>
+          <h1>Resume & Social Media</h1>
+          <p>LinkedIn</p>
+          <a href='https://www.linkedin.com/in/samuel-parkman/'>LinkedIn</a>
           </div>  
       </section>
     </div>
