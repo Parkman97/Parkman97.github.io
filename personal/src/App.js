@@ -76,9 +76,7 @@ function App() {
         <div className="section left">
           <h1>About Me</h1>
           <img src="/profile.jpg" alt="Samuel Parkman" className="Professional_Photo"/> 
-          <p>In the professional realm, I serve as a Software Engineer at GM, contributing my 
-            expertise to cutting-edge projects. Outside the traditional 9-to-5, I am dedicated to advancing my knowledge and skills in Computer Science, 
-            actively pursuing a B.S. degree from Oregon State University.</p>  
+          <p>In the professional realm, I serve as a Software Engineer at GM, contributing my expertise to cutting-edge projects. Outside the traditional 9-to-5, I am dedicated to advancing my knowledge and skills in Computer Science, actively pursuing a B.S. degree from Oregon State University.</p>  
         </div>
       </section>
 
