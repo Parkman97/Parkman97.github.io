@@ -42,11 +42,11 @@
 }
 
 img {
-  height: 20vw; /* Responsive size for image */
-  width: 20vw;  /* Scales with screen width */
-  position: absolute;
-  z-index: 3;
-  right: 5vw; /* Adjusted for responsiveness */
+  position: relative; /* Use relative positioning for better flexibility */
+  margin: 0 auto; /* Center the image */
+  display: block;
+  width: 20vw;
+  height: auto; /* Keep height proportional */
 }
 
 .Professional_Photo {
@@ -239,30 +239,33 @@ html {
 /* Responsive Media Queries */
 @media (max-width: 768px) {
   .section {
-    width: 90vw;
-    height: 50vh;
-    padding: 10px;
+    width: 90vw; /* Expand section width for mobile */
+    height: auto; /* Allow dynamic height */
+    padding: 20px; /* Add more padding for better spacing */
+    margin: 20px auto; /* Center sections */
   }
 
   img {
-    height: 30vw; /* Scale image down */
-    width: 30vw;
+    height: 40vw; /* Adjust the image size for mobile */
+    width: 40vw;
+    right: 0; /* Remove right positioning */
+    margin-top: 20px; /* Add some spacing from top */
+  }
+
+  .resume {
+    margin-left: 5vw; /* Adjust resume placement for mobile */
+    width: 80vw; /* Make the resume full width */
+    height: auto; /* Dynamically adjust height */
   }
 
   .nav-container {
-    width: 100%;
+    width: 100%; /* Make the navbar full width */
     justify-content: space-around;
   }
 
+  /* Swiper button adjustments */
   .custom-prev-button, .custom-next-button {
     width: 40px;
     height: 40px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .section {
-    width: 80vw;
-    height: 55vh;
   }
 }
