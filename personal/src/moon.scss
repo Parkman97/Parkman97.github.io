@@ -37,8 +37,6 @@
 }
 
 .clouds {
-  width: 100vw;
-  height: 100vh;
   background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat-x; /* Repeat clouds horizontally */
   background-size: cover; /* Ensure it covers the entire viewport */
   position: fixed;
@@ -150,13 +148,20 @@ body {
 
 /* Left-aligned sections */
 .section.left {
-  justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: flex-start;
+  width: 60vw; /* 60% width for larger screens */
+  margin-right: auto; /* Push the section to the left */
 }
 
 /* Right-aligned sections */
 .section.right {
-  justify-content: left;
-  margin-left: auto;
+  display: flex;
+  justify-content: flex-end; /* Align content to the right */
+  align-items: flex-end;
+  width: 60vw; /* 60% width for larger screens */
+  margin-left: auto; /* Push the section to the right */
 }
 
 .section h1, .section p {
@@ -231,8 +236,8 @@ html {
 
 .swiper {
   height: 40vh;
-  width: 90vw; /* Set swiper width to take more space */
-  margin: 0 auto; /* Center swiper */
+  width: 50vw; /* Set swiper width to take more space */
+  margin-left: 100 auto; /* Center swiper */
   overflow: auto;
   border-radius: 10px;
   border: 1px solid #ddd;
@@ -253,33 +258,60 @@ html {
   height: auto; /* Adjust height dynamically */
 }
 
-// /* Responsive Media Queries */
-// @media (max-width: 768px) {
-//   .section {
-//     width: 90vw; /* Expand section width for mobile */
-//     height: auto; /* Allow dynamic height */
-//     padding: 20px; /* Add more padding for better spacing */
-//     margin: 20px auto; /* Center sections */
-//   }
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .section {
+    justify-content: center; /* Center sections vertically */
+    align-items: center; /* Center content horizontally */
+    width: 60vw; /* Full width on mobile */
+    height: auto; /* Allow dynamic height */
+    padding: 20px; /* Add more padding for better spacing */
+    margin: 20px auto; /* Center sections */
+  }
 
-//   img {
-//     height: auto; /* Keep aspect ratio */
-//     max-width: 20vw; /* Constrain the width for mobile screens */
-//   }
+  img {
+    height: auto; /* Keep aspect ratio */
+    max-width: 45vw; /* Constrain the width for mobile screens */
+    top: 10vh;
 
-//   .resume {
-//     width: 90vw; /* Make the resume take full width on mobile */
-//     height: auto; /* Dynamically adjust height */
-//   }
+  }
 
-//   .nav-container {
-//     width: 100%; /* Make the navbar full width */
-//     justify-content: space-around;
-//   }
+  // .resume {
+  //   width: 90vw; /* Make the resume take full width on mobile */
+  //   height: auto; /* Dynamically adjust height */
+  //   top: 10px;
+  // }
 
-//   /* Swiper button adjustments */
-//   .custom-prev-button, .custom-next-button {
-//     width: 30px; /* Smaller buttons for mobile */
-//     height: 30px;
-//   }
-// }
+  .nav-container {
+    width: 100%; /* Make the navbar full width */
+    justify-content: space-around;
+  }
+
+  /* Swiper button adjustments */
+  .custom-prev-button {
+    width: 3rem; /* Smaller buttons for mobile */
+    height: 3rem;
+    left: 10.25rem;
+  }
+  
+  .custom-next-button {
+    width: 3rem; /* Smaller buttons for mobile */
+    height: 3rem;
+  }
+  .section.left {
+    width: 60vw; /* Make sections wider on mobile */
+    margin-left: 0vw; /* Push to the left */
+  }
+
+  .section.right {
+    width: 60vw; /* Make sections wider on mobile */
+    margin-right: 0vw; /* Push to the right */
+  }
+  .Professional_Photo {
+    position: relative;
+    left: 0; /* Remove fixed positioning */
+    top: 0;
+    margin: 20px auto; /* Center on mobile */
+    width: 50%; /* Adjust width for mobile */
+  }
+}
