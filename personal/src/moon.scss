@@ -253,33 +253,33 @@ html {
   height: auto; /* Adjust height dynamically */
 }
 
-/* Responsive Media Queries */
-@media (max-width: 768px) {
-  .section {
-    width: 90vw; /* Expand section width for mobile */
-    height: auto; /* Allow dynamic height */
-    padding: 20px; /* Add more padding for better spacing */
-    margin: 20px auto; /* Center sections */
-  }
+// /* Responsive Media Queries */
+// @media (max-width: 768px) {
+//   .section {
+//     width: 90vw; /* Expand section width for mobile */
+//     height: auto; /* Allow dynamic height */
+//     padding: 20px; /* Add more padding for better spacing */
+//     margin: 20px auto; /* Center sections */
+//   }
 
-  img {
-    height: auto; /* Keep aspect ratio */
-    max-width: 20vw; /* Constrain the width for mobile screens */
-  }
+//   img {
+//     height: auto; /* Keep aspect ratio */
+//     max-width: 20vw; /* Constrain the width for mobile screens */
+//   }
 
-  .resume {
-    width: 90vw; /* Make the resume take full width on mobile */
-    height: auto; /* Dynamically adjust height */
-  }
+//   .resume {
+//     width: 90vw; /* Make the resume take full width on mobile */
+//     height: auto; /* Dynamically adjust height */
+//   }
 
-  .nav-container {
-    width: 100%; /* Make the navbar full width */
-    justify-content: space-around;
-  }
+//   .nav-container {
+//     width: 100%; /* Make the navbar full width */
+//     justify-content: space-around;
+//   }
 
-  /* Swiper button adjustments */
-  .custom-prev-button, .custom-next-button {
-    width: 30px; /* Smaller buttons for mobile */
-    height: 30px;
-  }
-}
+//   /* Swiper button adjustments */
+//   .custom-prev-button, .custom-next-button {
+//     width: 30px; /* Smaller buttons for mobile */
+//     height: 30px;
+//   }
+// }
