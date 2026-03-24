@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Experience — Samuel Parkman</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 2.5rem; }
+  .timeline::before {
+    content: ''; position: absolute;
+    left: 0; top: 8px; bottom: 8px; width: 1px;
+    background: linear-gradient(to bottom, var(--accent), var(--border));
+  }
+  .timeline-item { position: relative; margin-bottom: 4rem; }
+  .timeline-dot {
+    position: absolute; left: -2.5rem; top: 6px;
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--accent); box-shadow: 0 0 12px rgba(0,229,160,0.5);
+    transform: translateX(-4px);
+  }
+  .timeline-date { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+  .timeline-role { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.2rem; }
+  .timeline-company { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+  .timeline-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .timeline-bullets li {
+    font-size: 0.93rem; color: var(--muted); padding-left: 1.4rem;
+    position: relative; line-height: 1.65;
+  }
+  .timeline-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.8rem; }
+  .timeline-highlights {
+    display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem;
+  }
+  .highlight-badge {
+    font-family: var(--mono); font-size: 0.7rem; padding: 0.4rem 0.9rem;
+    border-radius: 3px; background: rgba(0,229,160,0.07);
+    color: var(--accent); border: 1px solid rgba(0,229,160,0.2);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">SP_</a>
+  <ul class="nav-links">
+    <li><a href="skills.html">Skills</a></li>
+    <li><a href="experience.html" class="active">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-tag">Where I've Worked</div>
+  <h1 class="page-title">Work <span class="accent-text">Experience</span></h1>
+</div>
+
+<div class="container">
+
+  <div class="timeline">
+
+    <!-- ── JOB 1 — UPDATE with your info ── -->
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <!-- UPDATE: dates -->
+      <div class="timeline-date">June 2024 — Present</div>
+      <!-- UPDATE: job title -->
+      <div class="timeline-role">Software Engineer II — Platform Capabilities Lead</div>
+      <!-- UPDATE: company -->
+      <div class="timeline-company">General Motors</div>
+      <ul class="timeline-bullets">
+        <!-- UPDATE: bullet points -->
+        <li>Led a 50-person cross-functional team operating a regression testing platform running thousands of nightly tests on virtualized ECUs for 500+ engineers.</li>
+        <li>Automated sprint planning via Jira API — cutting planning time by 15% across 4 global teams.</li>
+        <li>Stabilized critical testing infrastructure and built onboarding workflows to accelerate internal tool adoption.</li>
+        <li>Defined platform architecture and roadmap for internal testing infrastructure supporting multiple development teams.</li>
+      </ul>
+      <!-- UPDATE: key metrics / highlights -->
+      <div class="timeline-highlights">
+        <span class="highlight-badge">500+ Engineers</span>
+        <span class="highlight-badge">15% Faster Sprint Planning</span>
+        <span class="highlight-badge">50-Person Team</span>
+      </div>
+    </div>
+
+    <!-- ── JOB 2 — UPDATE with your info ── -->
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">August 2022 — June 2024</div>
+      <div class="timeline-role">Software Engineer I — Software Automation Engineer</div>
+      <div class="timeline-company">General Motors</div>
+      <ul class="timeline-bullets">
+        <li>Architected a hybrid test-orchestration platform (containerized backend + custom GUI) used by 200+ engineers, reducing test setup overhead by 87%.</li>
+        <li>Extended automated test coverage by integrating Vector CANoe and Intrepid Vehicle Spy with internal automation libraries.</li>
+        <li>Diagnosed systemic CI and cloud failures, reducing false-positive test results by 30%.</li>
+      </ul>
+      <div class="timeline-highlights">
+        <span class="highlight-badge">87% Setup Reduction</span>
+        <span class="highlight-badge">30% Fewer False Positives</span>
+        <span class="highlight-badge">200+ Engineers</span>
+      </div>
+    </div>
+
+    <!-- ── JOB 3 — UPDATE with your info ── -->
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-date">October 2020 — August 2022</div>
+      <div class="timeline-role">Rotational Program Engineer</div>
+      <div class="timeline-company">General Motors</div>
+      <ul class="timeline-bullets">
+        <li>Deployed optimized object-detection algorithms for hardware systems achieving a 98%+ pass rate.</li>
+        <li>Ran stress tests and mechanical simulations to validate thermal and structural performance of Roof Rail Airbags under production loads.</li>
+      </ul>
+      <div class="timeline-highlights">
+        <span class="highlight-badge">98%+ Pass Rate</span>
+        <span class="highlight-badge">Hardware Systems</span>
+      </div>
+    </div>
+
+    <!-- ── ADD MORE JOBS: copy a timeline-item block above and paste here ── -->
+
+  </div>
+
+</div>
+
+<footer>
+  <p>Samuel Parkman · <a href="index.html" style="color:var(--accent);text-decoration:none;">Back to Home</a></p>
+</footer>
+
+<script>
+  document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver(([e]) => { if (e.isIntersecting) el.classList.add('visible'); }, { threshold: 0.1 }).observe(el);
+  });
+</script>
+</body>
+</html>

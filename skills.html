@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Skills — Samuel Parkman</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.75rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .skill-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .skill-card-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
+  .skill-card-title {
+    font-family: var(--mono); font-size: 0.72rem; color: var(--accent);
+    letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1rem;
+  }
+
+  /* proficiency bars */
+  .proficiency-list { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1.5rem; }
+  .prof-item {}
+  .prof-header { display: flex; justify-content: space-between; margin-bottom: 0.4rem; }
+  .prof-name { font-family: var(--mono); font-size: 0.75rem; color: var(--text); }
+  .prof-level { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); }
+  .prof-bar { height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .prof-fill {
+    height: 100%; background: var(--accent); border-radius: 2px;
+    width: 0; transition: width 1s ease;
+  }
+  .prof-fill.animate { width: var(--w); }
+
+  /* currently learning */
+  .learning-section {
+    background: var(--surface);
+    border: 1px solid rgba(0,119,255,0.25);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  .learning-title { font-family: var(--mono); font-size: 0.72rem; color: var(--accent2); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1rem; }
+  .learning-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .learning-item {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 6px; padding: 1rem 1.25rem;
+  }
+  .learning-item-name { font-weight: 800; margin-bottom: 0.3rem; }
+  .learning-item-desc { font-size: 0.8rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">SP_</a>
+  <ul class="nav-links">
+    <li><a href="skills.html" class="active">Skills</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-tag">What I Work With</div>
+  <h1 class="page-title">My <span class="accent-text">Skills</span></h1>
+</div>
+
+<div class="container">
+
+  <!-- SKILL CATEGORY CARDS -->
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Technologies</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="skills-grid">
+
+    <!-- ── UPDATE: DevOps & Cloud tags ── -->
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">⚙️</div>
+      <div class="skill-card-title">DevOps &amp; Cloud</div>
+      <div class="tag-list">
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">Microsoft Azure</span>
+        <span class="tag">GCP</span>
+        <span class="tag">GitHub Actions</span>
+      </div>
+    </div>
+
+    <!-- ── UPDATE: Programming language tags ── -->
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">💻</div>
+      <div class="skill-card-title">Languages</div>
+      <div class="tag-list">
+        <span class="tag">Python</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">C</span>
+        <span class="tag">SQL</span>
+        <span class="tag learning">Go ✦ learning</span>
+        <span class="tag learning">Rust ✦ learning</span>
+      </div>
+    </div>
+
+    <!-- ── UPDATE: Framework tags ── -->
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">🧰</div>
+      <div class="skill-card-title">Frameworks &amp; Libraries</div>
+      <div class="tag-list">
+        <span class="tag">React</span>
+        <span class="tag">Angular</span>
+        <span class="tag">Flask</span>
+        <span class="tag">Pytest</span>
+        <span class="tag">Selenium</span>
+        <span class="tag">Robot Framework</span>
+        <span class="tag">Jira API</span>
+      </div>
+    </div>
+
+    <!-- ── UPDATE: Specialization tags ── -->
+    <div class="skill-card reveal">
+      <div class="skill-card-icon">🎯</div>
+      <div class="skill-card-title">Specializations</div>
+      <div class="tag-list">
+        <span class="tag">Test Automation</span>
+        <span class="tag">CI/CD</span>
+        <span class="tag">Platform Engineering</span>
+        <span class="tag">ECU Simulation</span>
+        <span class="tag">Team Leadership</span>
+      </div>
+    </div>
+
+    <!-- ── ADD MORE CATEGORIES: copy a skill-card block and paste here ── -->
+
+  </div>
+
+  <!-- PROFICIENCY BARS -->
+  <div class="section-header reveal" style="margin-top:4rem">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Proficiency</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem" class="reveal">
+    <div class="proficiency-list">
+      <!-- ── UPDATE: name and --w percentage for each skill ── -->
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">Python</span><span class="prof-level">Expert</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--w:95%"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">Docker / Kubernetes</span><span class="prof-level">Advanced</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--w:88%"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">JavaScript / React</span><span class="prof-level">Advanced</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--w:82%"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">C</span><span class="prof-level">Intermediate</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--w:70%"></div></div>
+      </div>
+    </div>
+    <div class="proficiency-list">
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">CI/CD Pipelines</span><span class="prof-level">Expert</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--w:92%"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">Azure / GCP</span><span class="prof-level">Intermediate</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--w:72%"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">SQL</span><span class="prof-level">Intermediate</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--w:68%"></div></div>
+      </div>
+      <div class="prof-item">
+        <div class="prof-header"><span class="prof-name">Test Automation</span><span class="prof-level">Expert</span></div>
+        <div class="prof-bar"><div class="prof-fill" style="--w:96%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CURRENTLY LEARNING -->
+  <div class="learning-section reveal">
+    <div class="learning-title">Currently Learning</div>
+    <div class="learning-grid">
+      <!-- ── UPDATE: what you're learning ── -->
+      <div class="learning-item">
+        <div class="learning-item-name">Go</div>
+        <div class="learning-item-desc">Exploring Go for high-performance backend services and CLI tooling.</div>
+      </div>
+      <div class="learning-item">
+        <div class="learning-item-name">Rust</div>
+        <div class="learning-item-desc">Building on systems programming background to learn memory-safe low-level code.</div>
+      </div>
+      <!-- ── ADD MORE: copy a learning-item block ── -->
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>Samuel Parkman · <a href="index.html" style="color:var(--accent);text-decoration:none;">Back to Home</a></p>
+</footer>
+
+<script>
+  // Animate proficiency bars on scroll
+  const fills = document.querySelectorAll('.prof-fill');
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('animate'); });
+  }, { threshold: 0.3 });
+  fills.forEach(f => barObserver.observe(f));
+
+  // Scroll reveal
+  document.querySelectorAll('.reveal').forEach(el => {
+    new IntersectionObserver(([e]) => { if (e.isIntersecting) el.classList.add('visible'); }, { threshold: 0.1 }).observe(el);
+  });
+</script>
+</body>
+</html>
