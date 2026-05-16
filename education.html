@@ -41,25 +41,6 @@
   }
   .edu-highlights li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.78rem; }
 
-  /* certifications */
-  .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-  .cert-card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: 8px; padding: 1.5rem;
-    display: flex; align-items: flex-start; gap: 1rem;
-    transition: border-color 0.2s;
-  }
-  .cert-card:hover { border-color: var(--accent2); }
-  .cert-icon { font-size: 1.5rem; flex-shrink: 0; }
-  .cert-name { font-weight: 800; font-size: 0.95rem; margin-bottom: 0.2rem; }
-  .cert-issuer { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); }
-  .cert-date { font-family: var(--mono); font-size: 0.68rem; color: var(--accent); margin-top: 0.3rem; }
-
-  .placeholder-note {
-    font-family: var(--mono); font-size: 0.75rem; color: var(--muted);
-    border: 1px dashed var(--border); border-radius: 6px; padding: 1.25rem;
-    text-align: center; margin-top: 1rem;
-  }
 </style>
 </head>
 <body>
@@ -133,33 +114,6 @@
 
   </div>
 
-  <!-- CERTIFICATIONS -->
-  <div class="section-header reveal">
-    <span class="section-num">02</span>
-    <h2 class="section-title">Certifications</h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="cert-grid">
-    <!-- ── UPDATE or DELETE these if you don't have certs yet ── -->
-    <!-- Example cert card: -->
-    <!--
-    <div class="cert-card reveal">
-      <div class="cert-icon">🏅</div>
-      <div>
-        <div class="cert-name">AWS Certified Developer</div>
-        <div class="cert-issuer">Amazon Web Services</div>
-        <div class="cert-date">Earned: Jan 2024</div>
-      </div>
-    </div>
-    -->
-
-    <!-- ── PLACEHOLDER — remove once you add real certs ── -->
-    <div class="placeholder-note reveal" style="grid-column:1/-1">
-      // No certifications listed yet — add yours above by uncommenting the cert-card template
-    </div>
-
-  </div>
 
 </div>
 
